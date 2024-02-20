@@ -41,7 +41,7 @@ bin/
 ### Mac OS ###
 .DS_Store
 
-/caches/**
-/daemon/**
-/native/**
-/wrapper/**
+.caches/**
+.daemon/**
+.native/**
+.wrapper/**
