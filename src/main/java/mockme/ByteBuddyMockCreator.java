@@ -19,7 +19,8 @@ public class ByteBuddyMockCreator implements MockCreator {
     public <T> T createMock(Class<T> mockTargetClass, List<InvocationDetails> behaviourList) {
         ByteBuddy byteBuddy = new ByteBuddy();
 
-        Class<? extends T> classWithInterceptor = byteBuddy.subclass(mockTargetClass)
+        Class<? extends T> classWithInterceptor = byteBuddy
+                .subclass(mockTargetClass)
                 .method(any())
                 .intercept(MethodDelegation.to(InterceptorDelegate.class))
                 .defineField("interceptor", MockmeInterceptor.class, PRIVATE)

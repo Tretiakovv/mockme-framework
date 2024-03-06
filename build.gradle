@@ -1,5 +1,5 @@
 plugins {
-    id 'java'
+    id 'java-library'
 }
 
 group = 'ru.nsu.fit.mockme'
@@ -10,6 +10,10 @@ repositories {
 }
 
 dependencies {
+
+    implementation group:'org.objenesis',name:'objenesis',version:'2.4'
+    implementation group:'net.bytebuddy',name:'byte-buddy',version:'1.4.26'
+    implementation group:'net.bytebuddy',name:'byte-buddy-agent',version:'1.4.26'
 
     implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.7'
     testImplementation platform('org.junit:junit-bom:5.9.1')

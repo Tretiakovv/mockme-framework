@@ -6,25 +6,23 @@ import java.util.Objects;
 public class InvocationDetails<T> {
 
     private String attachedClassName;
-
     private String methodName;
-
     private Object[] arguments;
-
     private T result;
 
-    public InvocationDetails(String methodName, Object[]arguments, String attachedClassName) {
+    public InvocationDetails(String methodName, Object[] arguments, String attachedClassName) {
         this.methodName = methodName;
         this.arguments = arguments;
         this.attachedClassName = attachedClassName;
     }
 
-    public void thenReturn(T t) {
+    public InvocationDetails<T> thenReturn(T t) {
         this.result = t;
+        return this;
     }
 
     public T getResult() {
-        return result;
+        return this.result;
     }
 
     @Override
