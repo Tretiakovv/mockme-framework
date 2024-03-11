@@ -1,2 +1,5 @@
 rootProject.name = 'mockme-framework'
+include 'processor'
+include 'annotation'
+include 'example'
 
