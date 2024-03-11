@@ -24,13 +24,6 @@ project(':processor') {
     }
 }
 
-project(':example') {
-    dependencies {
-        implementation project(':annotation')
-        annotationProcessor project(':processor')
-    }
-}
-
 dependencies {
 
     implementation group:'org.objenesis',name:'objenesis',version:'2.4'
@@ -43,6 +36,10 @@ dependencies {
 
     implementation project(':annotation')
     annotationProcessor project(':processor')
+}
+
+compileTestJava {
+    options.annotationProcessorPath = configurations.annotationProcessor
 }
 
 test {
