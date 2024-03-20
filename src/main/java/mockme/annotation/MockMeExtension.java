@@ -1,11 +1,11 @@
-package mockme;
+package mockme.annotation;
 
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
 
 public class MockMeExtension implements BeforeEachCallback {
     @Override
-    public void beforeEach(ExtensionContext context) throws Exception {
+    public void beforeEach(ExtensionContext context) {
         Object testInstance = context.getRequiredTestInstance();
         MockMeProcessor.process(testInstance);
     }
