@@ -1,7 +1,11 @@
 package mockme;
 
-import annotation.MockMe;
-
-@MockMe("MEMEMEME")
 public class TestAnnotationClass {
+    public int meme(int lol) {
+        if (lol == 1) {
+            return 1;
+        } else {
+            return 2;
+        }
+    }
 }

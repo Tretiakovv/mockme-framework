@@ -19,8 +19,7 @@ public class MockMeAnnotationProcessor extends AbstractProcessor {
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
         for (Element element : roundEnv.getElementsAnnotatedWith(MockMe.class)) {
             MockMe myAnnotation = element.getAnnotation(MockMe.class);
-            String value = myAnnotation.value();
-            processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE, "Annotation value: " + value);
+            processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE, "Annotation value");
         }
         return true;
     }

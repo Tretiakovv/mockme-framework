@@ -1,10 +1,15 @@
 package mockme;
 
+import annotation.MockMe;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@ExtendWith(MockMeExtension.class)
 public class MockingTest {
 
     @Test
@@ -27,5 +32,12 @@ public class MockingTest {
         assertEquals(20, mockTarget.saySomething(0));
     }
 
+    @MockMe
+    Target gugugaga = new Target("GUGUGAGA");
 
+    @Test
+    void shouldReturnLatestValueMOCKITOBEAST() {
+        Mockme.when(gugugaga.saySomething(0)).thenReturn(12);
+        assertEquals(12, gugugaga.saySomething(0));
+    }
 }

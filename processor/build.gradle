@@ -10,6 +10,11 @@ repositories {
 }
 
 dependencies {
+    implementation group:'org.objenesis',name:'objenesis',version:'2.4'
+    implementation group:'net.bytebuddy',name:'byte-buddy',version:'1.4.26'
+    implementation group:'net.bytebuddy',name:'byte-buddy-agent',version:'1.4.26'
+
+    implementation 'com.squareup:javapoet:1.13.0'
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
