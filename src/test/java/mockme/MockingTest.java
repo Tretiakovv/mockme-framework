@@ -22,6 +22,17 @@ public class MockingTest {
     }
 
     @Test
+    @SuppressWarnings("uchecked")
+    void shouldMockStaticMethods() {
+        try(MockStatic<Target> ignored = Mockme.mockStatic(Target.class)){
+            Mockme.when(Target::returnStaticInt).thenReturn(100_000);
+            assertEquals(100_000, Target.returnStaticInt());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Test
     void shouldMockObjectSuccessfully() {
 
         Target mockTarget = Mockme.mock(Target.class);

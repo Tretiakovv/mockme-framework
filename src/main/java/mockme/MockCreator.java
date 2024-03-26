@@ -4,4 +4,5 @@ import java.util.List;
 
 public interface MockCreator {
     <T> T createMock(Class<T> mockTargetClass, List<InvocationDetails> behaviourList);
+    <T> MockStatic<T> createStaticMock(Class<T> mockTargetClass, List<InvocationDetails> behaviourList);
 }

@@ -1,5 +1,7 @@
 package mockme;
 
+import java.util.Random;
+
 public class Target {
 
     private String targetName;
@@ -27,6 +29,10 @@ public class Target {
     public String doThings(int taskNumber, String name) {
 
         return String.format("Doing number %d name: %s", taskNumber, name);
+    }
+
+    public static int returnStaticInt() {
+        return new Random().nextInt();
     }
 
     public String getTargetName() {
