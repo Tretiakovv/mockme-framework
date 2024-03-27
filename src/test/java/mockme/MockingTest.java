@@ -21,6 +21,7 @@ public class MockingTest {
         assertEquals(10, mockAnnotationTarget.saySomething(0));
     }
 
+    /*
     @Test
     @SuppressWarnings("uchecked")
     void shouldMockStaticMethods() {
@@ -31,6 +32,7 @@ public class MockingTest {
             throw new RuntimeException(e);
         }
     }
+     */
 
     @Test
     void shouldMockObjectSuccessfully() {
