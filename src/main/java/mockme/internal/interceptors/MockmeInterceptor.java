@@ -1,6 +1,6 @@
-package mockme.interceptors;
+package mockme.internal.interceptors;
 
-import mockme.InvocationDetails;
+import mockme.internal.InvocationDetails;
 
 import java.lang.reflect.Method;
 import java.util.List;

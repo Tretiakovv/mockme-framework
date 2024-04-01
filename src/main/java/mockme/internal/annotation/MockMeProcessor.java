@@ -1,4 +1,4 @@
-package mockme.annotation;
+package mockme.internal.annotation;
 
 import mockme.Mockme;
 
@@ -7,7 +7,7 @@ import javax.annotation.processing.SupportedSourceVersion;
 import javax.lang.model.SourceVersion;
 import java.lang.reflect.Field;
 
-@SupportedAnnotationTypes("mockme.annotation.MockMe")
+@SupportedAnnotationTypes("mockme.internal.annotation.MockMe")
 @SupportedSourceVersion(SourceVersion.RELEASE_17)
 public class MockMeProcessor {
     public static void process(Object testInstance) {

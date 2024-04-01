@@ -1,4 +1,4 @@
-package mockme;
+package mockme.internal;
 
 import java.util.Arrays;
 import java.util.Objects;

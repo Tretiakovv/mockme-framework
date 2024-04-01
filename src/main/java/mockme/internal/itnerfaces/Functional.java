@@ -1,4 +1,4 @@
-package mockme;
+package mockme.internal.itnerfaces;
 
 @FunctionalInterface
 public interface Functional {

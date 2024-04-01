@@ -1,4 +1,4 @@
-package mockme;
+package mockme.internal;
 
 public class MockStatic<T> implements AutoCloseable {
 

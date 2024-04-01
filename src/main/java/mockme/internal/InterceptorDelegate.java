@@ -1,6 +1,6 @@
-package mockme;
+package mockme.internal;
 
-import mockme.interceptors.MockmeInterceptor;
+import mockme.internal.interceptors.MockmeInterceptor;
 import net.bytebuddy.implementation.bind.annotation.*;
 
 import java.lang.reflect.Method;

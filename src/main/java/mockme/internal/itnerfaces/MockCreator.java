@@ -1,4 +1,7 @@
-package mockme;
+package mockme.internal.itnerfaces;
+
+import mockme.internal.InvocationDetails;
+import mockme.internal.MockStatic;
 
 import java.util.List;
 

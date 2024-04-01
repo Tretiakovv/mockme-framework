@@ -1,5 +1,10 @@
 package mockme;
 
+import mockme.internal.InvocationDetails;
+import mockme.internal.MockStatic;
+import mockme.internal.RealMockme;
+import mockme.internal.itnerfaces.Functional;
+
 public class Mockme {
 
     static final RealMockme REAL_MOCKME = new RealMockme();

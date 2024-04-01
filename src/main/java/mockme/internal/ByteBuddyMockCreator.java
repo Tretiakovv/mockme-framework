@@ -1,7 +1,9 @@
-package mockme;
+package mockme.internal;
 
-import mockme.interceptors.MockmeInterceptor;
-import mockme.interceptors.MockmeStaticInterceptor;
+import mockme.internal.interceptors.MockmeInterceptor;
+import mockme.internal.interceptors.MockmeStaticInterceptor;
+import mockme.internal.itnerfaces.MockCreator;
+import mockme.internal.itnerfaces.MockmeInterceptable;
 import net.bytebuddy.ByteBuddy;
 import net.bytebuddy.agent.ByteBuddyAgent;
 import net.bytebuddy.asm.Advice;

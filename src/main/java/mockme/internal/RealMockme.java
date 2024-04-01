@@ -1,4 +1,7 @@
-package mockme;
+package mockme.internal;
+
+import mockme.internal.itnerfaces.Functional;
+import mockme.internal.itnerfaces.MockCreator;
 
 import java.util.ArrayList;
 import java.util.List;

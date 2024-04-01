@@ -1,4 +1,4 @@
-package mockme.annotation;
+package mockme.internal.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,7 +1,7 @@
 package mockme;
 
-import mockme.annotation.MockMe;
-import mockme.annotation.MockMeExtension;
+import mockme.internal.annotation.MockMe;
+import mockme.internal.annotation.MockMeExtension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 

@@ -1,6 +1,6 @@
-package mockme;
+package mockme.internal.itnerfaces;
 
-import mockme.interceptors.MockmeInterceptor;
+import mockme.internal.interceptors.MockmeInterceptor;
 
 public interface MockmeInterceptable {
 

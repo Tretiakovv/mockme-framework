@@ -1,4 +1,4 @@
-package mockme.annotation;
+package mockme.internal.annotation;
 
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
