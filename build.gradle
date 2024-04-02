@@ -1,19 +1,56 @@
 plugins {
-    id 'java'
+    id 'java-library'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'jacoco'
 }
 
-group = 'ru.nsu.fit.mockme'
+group = 'mockme'
 version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
 
+subprojects {
+    apply plugin: 'java'
+    repositories {
+        mavenCentral()
+    }
+}
+
 dependencies {
+    implementation group:'org.objenesis',name:'objenesis',version:'2.4'
+
+    implementation group: 'net.bytebuddy', name: 'byte-buddy', version: '1.12.10'
+    implementation group:'net.bytebuddy',name:'byte-buddy-agent',version:'1.12.10'
+
+    implementation platform('org.junit:junit-bom:5.9.1')
+    implementation 'org.junit.jupiter:junit-jupiter'
+
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.7'
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+shadowJar {
+    archiveBaseName.set('mockme')
+    archiveVersion.set('1.0.0')
+    archiveClassifier.set('')
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = true
+    }
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it)
+        }))
+    }
 }
