@@ -2,6 +2,8 @@ package mockme.internal;
 
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.concurrent.Callable;
+import java.util.function.Supplier;
 
 public class InvocationDetails<T> {
 
@@ -19,6 +21,10 @@ public class InvocationDetails<T> {
     public InvocationDetails<T> thenReturn(T t) {
         this.result = t;
         return this;
+    }
+
+    public <R extends Throwable> void thenThrow(R r) {
+        this.result = (T) r;
     }
 
     public T getResult() {

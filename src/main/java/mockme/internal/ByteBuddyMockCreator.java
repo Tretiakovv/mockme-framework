@@ -1,7 +1,6 @@
 package mockme.internal;
 
 import mockme.internal.interceptors.MockmeInterceptor;
-import mockme.internal.interceptors.MockmeStaticInterceptor;
 import mockme.internal.itnerfaces.MockCreator;
 import mockme.internal.itnerfaces.MockmeInterceptable;
 import net.bytebuddy.ByteBuddy;
@@ -56,7 +55,7 @@ public class ByteBuddyMockCreator implements MockCreator {
 
         classWithInterceptor = new ByteBuddy()
                 .redefine(mockTargetClass)
-                .visit(Advice.to(MockmeStaticInterceptor.class).on(isStatic()))
+                .visit(Advice.to(InterceptorDelegate.class).on(isStatic()))
                 .make()
                 .load(getClass().getClassLoader(), ClassReloadingStrategy.fromInstalledAgent())
                 .getLoaded();

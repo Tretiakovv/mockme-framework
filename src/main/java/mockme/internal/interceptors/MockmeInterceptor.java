@@ -24,10 +24,9 @@ public class MockmeInterceptor {
             return invokedMethod.getDefaultValue();
 
         } else {
-
             InvocationDetails recordedBehaviour = recordedInvocationDetails.get(recordedInvocationDetails.indexOf(invocationDetails));
             return recordedBehaviour.getResult();
-
         }
     }
+
 }
